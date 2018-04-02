@@ -1,12 +1,13 @@
 #!/usr/bin/env python
-
+# Author :  Vijay Singh Gosai
+# Version: 1.0.0
 ### Importing python modules ###
 import os, time, datetime, sys
 import os
 import zipfile
 
 def zipdir(dirPath=None, zipFilePath=None, includeDirInZip=True):
-    
+
     if not zipFilePath:
         zipFilePath = dirPath + ".zip"
     if not os.path.isdir(dirPath):
@@ -21,7 +22,7 @@ def zipdir(dirPath=None, zipFilePath=None, includeDirInZip=True):
         if not includeDirInZip:
             archivePath = archivePath.replace(dirToZip + os.path.sep, "", 1)
         return os.path.normcase(archivePath)
-        
+
     outFile = zipfile.ZipFile(zipFilePath, "w", compression=zipfile.ZIP_DEFLATED)
     for (archiveDirPath, dirNames, fileNames) in os.walk(dirPath):
         for fileName in fileNames:

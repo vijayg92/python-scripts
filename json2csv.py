@@ -1,6 +1,8 @@
+#!/usr/bin/env python2.7
+# Author :  Vijay Singh Gosai
+# Version: 1.0.0
 import json
 import csv
-
 
 f = open('Azurelogs.json')
 data = json.load(f)

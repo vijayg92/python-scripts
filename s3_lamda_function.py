@@ -1,3 +1,6 @@
+# Author :  Vijay Singh Gosai
+# Version: 1.0.0
+
 import boto3
 import logging
 import json
@@ -22,10 +25,10 @@ def lambda_handler(event, context):
     print "Creating folder to upload logs...."
     putResponse = s3.put_object(Bucket=bucketS3, Key=folderS3 + '/')
     print putResponse
-    
+
     tempFile = open('/tmp/file', 'w+')
     key = folderS3 + '/' + prefixS3 + str(int(time.time())) + ".log"
-    
+
     for t in cleanEvent['logEvents']:
         #tempFile.write("t " + str(t['timestamp']) + " m " + str(t['message']) + "\n")
         tempFile.write(str(t['message']) + "\n")

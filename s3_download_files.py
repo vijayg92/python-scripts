@@ -1,5 +1,6 @@
 #!/usr/bin/env python2.7
-
+# Author :  Vijay Singh Gosai
+# Version: 1.0.0
 import os, sys, argparse, logging
 
 from boto.s3 import connect_to_region
@@ -7,7 +8,7 @@ from boto.s3.connection import S3Connection, OrdinaryCallingFormat
 from boto.s3.key import Key
 
 class SyncS3():
-	
+
     def __init__(self, key, secret, bucket, region, dfolder):
         '''
         Initialize AWS Credentials
